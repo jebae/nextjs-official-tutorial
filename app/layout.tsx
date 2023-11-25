@@ -1,12 +1,15 @@
 import '@/app/ui/global.css';
 import { pretendard } from '@/app/ui/fonts';
-
-export const metadata = {
-  title: 'Acme',
-  openGraph: {
-    title: 'Acme'
-  }
-}
+import type { Metadata } from 'next/types';
+ 
+export const metadata: Metadata = {
+  title: {
+    template: '%s | Acme Dashboard',
+    default: 'Acme Dashboard',
+  },
+  description: 'The official Next.js Learn Dashboard built with App Router.',
+  metadataBase: new URL('https://next-learn-dashboard.vercel.sh'),
+};
 
 export default function RootLayout({
   children,
